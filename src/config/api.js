@@ -1,5 +1,5 @@
 import 'dotenv/config';
-
+console.log(process.env.OPENAI_API_KEY);
 // API Configuration
 export const apiConfig = {
   openai: {

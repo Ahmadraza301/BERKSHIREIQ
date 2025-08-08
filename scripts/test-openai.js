@@ -4,6 +4,7 @@ import 'dotenv/config';
 
 async function testOpenAI() {
   console.log('🧪 Testing OpenAI API key...\n');
+  console.log(OPENAI_API_KEY);
   
   try {
     // Test with a simple fetch request to OpenAI API
