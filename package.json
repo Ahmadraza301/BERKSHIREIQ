@@ -12,6 +12,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "node scripts/setup.js",
+    "test-config": "node scripts/test-config.js",
+    "test-openai": "node scripts/test-openai.js",
     "dev": "mastra dev",
     "build": "mastra build",
     "start": "mastra start"

@@ -1,8 +1,8 @@
 import { PGVectorStore, OpenAIEmbeddings } from '@mastra/core'; // Combined import
-import dotenv from 'dotenv';
+import { getValidatedConfig } from './api.js';
 
-// Initialize environment variables
-dotenv.config();
+// Get validated configuration
+const config = getValidatedConfig();
 
 // Configuration for document embeddings
 const embeddings = new OpenAIEmbeddings({
@@ -12,7 +12,7 @@ const embeddings = new OpenAIEmbeddings({
 
 // PostgreSQL vector store configuration
 export const vectorStore = new PGVectorStore({
-  connectionString: process.env.DATABASE_URL || 'postgresql://postgres:421302@localhost:5432/421302', // Updated default
+  connectionString: config.database.url,
   embeddings,
   tableName: 'berkshire_docs',
   metadataColumns: [
