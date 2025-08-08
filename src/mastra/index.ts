@@ -1,4 +1,7 @@
+import 'dotenv/config';
 
+console.log("API key is:", process.env.OPENAI_API_KEY);
+import 'dotenv/config';
 import { Mastra } from '@mastra/core/mastra';
 import { PinoLogger } from '@mastra/loggers';
 import { LibSQLStore } from '@mastra/libsql';

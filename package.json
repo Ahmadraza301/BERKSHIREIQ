@@ -22,6 +22,7 @@
     "@mastra/libsql": "^0.13.1",
     "@mastra/memory": "^0.12.1",
     "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
     "pdf-parse": "^1.1.1",
     "pg": "^8.16.3",
     "pgvector": "^0.2.1",
