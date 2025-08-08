@@ -2,19 +2,19 @@
   "name": "berkshireiq",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "mastra dev",
     "build": "mastra build",
     "start": "mastra start"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "type": "module",
-  "engines": {
-    "node": ">=20.9.0"
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.3.23",
