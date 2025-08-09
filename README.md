@@ -1,3 +1,4 @@
+![Frontend Page](frontendpage.png)
 # BerkshireIQ
 
 A sophisticated AI-powered platform for analyzing and querying Warren Buffett's Berkshire Hathaway shareholder letters using advanced RAG (Retrieval-Augmented Generation) technology.
