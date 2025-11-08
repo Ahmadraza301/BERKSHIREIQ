@@ -13,6 +13,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "setup": "node scripts/setup.js",
+    "status": "node scripts/show-status.js",
+    "check-db": "node scripts/check-postgres.js",
     "test-config": "node scripts/test-config.js",
     "test-openai": "node scripts/test-openai.js",
     "dev": "mastra dev",

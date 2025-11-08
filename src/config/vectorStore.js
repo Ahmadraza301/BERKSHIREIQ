@@ -1,28 +1,28 @@
-import { PGVectorStore, OpenAIEmbeddings } from '@mastra/core'; // Combined import
+import pg from 'pg';
 import { getValidatedConfig } from './api.js';
 
 // Get validated configuration
 const config = getValidatedConfig();
 
-// Configuration for document embeddings
-const embeddings = new OpenAIEmbeddings({
-  model: 'text-embedding-3-large',
-  dimensions: 1536
+// PostgreSQL connection pool
+const pool = new pg.Pool({
+  connectionString: config.database.url,
 });
 
-// PostgreSQL vector store configuration
-export const vectorStore = new PGVectorStore({
-  connectionString: config.database.url,
-  embeddings,
+// Vector store configuration
+export const vectorStore = {
+  pool,
   tableName: 'berkshire_docs',
-  metadataColumns: [
-    'year',
-    'source',
-    'pages',
-    'period'
-  ],
-  vectorDimensions: 1536
-});
+  vectorDimensions: 1536,
+  
+  async connect() {
+    return await pool.connect();
+  },
+  
+  async query(text, params) {
+    return await pool.query(text, params);
+  }
+};
 
 // Enhanced test connection function
 export async function testConnection() {
